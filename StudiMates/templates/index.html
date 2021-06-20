@@ -1,4 +1,4 @@
- 
+ {% load static %}
 
 <!doctype html>
 <html lang="en">
@@ -105,9 +105,9 @@ body{
                 </div>
 
                 <div class="span_4 column">
-                  <a href="about.html" class="about"> About </a>|
-                  <a href="Login.html" class="login"> Login </a>|
-                  <a href="Register.html" class="Register"> Register </a>
+                  <a href="{% url 'about' %}" class="about"> About </a>|
+                  <a href="{% url 'login' %}" class="login"> Login </a>|
+                  <a href="{% url 'register' %}" class="Register"> Register </a>
                 </div>
             </div>
         
@@ -138,7 +138,7 @@ body{
 
     <nav id="main-navigation-bar" class="navbar navbar-expand-lg navbar-light bg-light">
         <div style="padding: 2px;" class="container-fluid">
-            <a class="navbar-brand" href="/StudiMates/templates/home.html"><img src="StudiMatesLogo.PNG" alt="StudiMates"></a>
+            <a class="navbar-brand" href="/StudiMates/templates/home.html"><img src="{% static 'images/StudiMatesLogo.PNG' %}" alt="StudiMates"></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -154,7 +154,7 @@ body{
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item" href="#">MCA</a></li>
-                  <li><a class="dropdown-item" href="#">Syllabus</a></li>
+                  <li><a class="dropdown-item" href="{% url 'syllabus' %}">Syllabus</a></li>
                   <li><a class="dropdown-item" href="#">Written Notes</a></li>
                   <li><a class="dropdown-item" href="#">PDF Notes</a></li>
                   <li><hr class="dropdown-divider"></li>
@@ -163,19 +163,19 @@ body{
               </li>
             
               <li style="padding: 2px;" class="nav-item">
-                <a class="nav-link" href="Syllabus.html">Syllabus</a>
+                <a class="nav-link" href="{% url 'syllabus' %}">Syllabus</a>
               </li>
 
               <li style="padding: 2px;"class="nav-item">
-                <a class="nav-link" href="Resources.html">Resources</a>
+                <a class="nav-link" href="{% url 'resources' %}">Resources</a>
               </li>
 
               <li style="padding: 2px;"class="nav-item">
-                <a class="nav-link" href="#section2-footer">Contact</a>
+                <a class="nav-link" href="#section2-footer" href="{%url 'contact' %}">Contact</a>
               </li>
 
               <li style="padding: 2px;" class="nav-item">
-                <a class="nav-link" href="extras.html">Extras</a>
+                <a class="nav-link" href="{% url 'extras'%}">Extras</a>
               </li>
             <!--  <li class="nav-item">
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
@@ -207,7 +207,7 @@ body{
         <div class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
           <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
             <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-              <img src="StudiMatesLogo.PNG" ><!--fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">-->
+              <img src="/StudiMates/static/images/StudiMatesLogo.PNG" ><!--fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">-->
               <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
 
               <span class="ml-3 text-xl">Stud!Mates</span>
@@ -216,23 +216,35 @@ body{
           </div>
           <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
             <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-              <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
+              <h2 class="title-font font-medium text-white-900 tracking-widest text-sm mb-3">Site Links</h2>
               <nav class="list-none mb-10">
                 <li>
-                  <a class="text-gray-600 hover:text-gray-800">First Link</a>
+                  <a class="text-gray-600 hover:text-gray-800">Home</a>
                 </li>
                 <li>
-                  <a class="text-gray-600 hover:text-gray-800">Second Link</a>
+                  <a class="text-gray-600 hover:text-gray-800">Courses</a>
                 </li>
                 <li>
-                  <a class="text-gray-600 hover:text-gray-800">Third Link</a>
+                  <a class="text-gray-600 hover:text-gray-800">Syllabus</a>
                 </li>
                 <li>
-                  <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
+                  <a class="text-gray-600 hover:text-gray-800">Resources</a>
                 </li>
               </nav>
             </div>
             <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+              <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">--</h2>
+              <nav class="list-none mb-10">
+                <li>
+                  <a class="text-gray-600 hover:text-gray-800" href="contact.html">Contact us</a>
+                </li>
+                <li>
+                  <a class="text-gray-600 hover:text-gray-800" href="extras.html">Extra</a>
+                </li>
+                
+              </nav>
+            </div>
+           <!-- <div class="lg:w-1/4 md:w-1/2 w-full px-4">
               <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
               <nav class="list-none mb-10">
                 <li>
@@ -248,41 +260,7 @@ body{
                   <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
                 </li>
               </nav>
-            </div>
-            <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-              <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
-              <nav class="list-none mb-10">
-                <li>
-                  <a class="text-gray-600 hover:text-gray-800">First Link</a>
-                </li>
-                <li>
-                  <a class="text-gray-600 hover:text-gray-800">Second Link</a>
-                </li>
-                <li>
-                  <a class="text-gray-600 hover:text-gray-800">Third Link</a>
-                </li>
-                <li>
-                  <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
-                </li>
-              </nav>
-            </div>
-            <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-              <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
-              <nav class="list-none mb-10">
-                <li>
-                  <a class="text-gray-600 hover:text-gray-800">First Link</a>
-                </li>
-                <li>
-                  <a class="text-gray-600 hover:text-gray-800">Second Link</a>
-                </li>
-                <li>
-                  <a class="text-gray-600 hover:text-gray-800">Third Link</a>
-                </li>
-                <li>
-                  <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
-                </li>
-              </nav>
-            </div>
+            </div>-->
           </div>
         </div>
         <div class="bg-gray-100">
@@ -292,12 +270,12 @@ body{
             </p>
 
             <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
-              <a class="text-gray-500">
+              <a class="text-white-500">
                 <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
                   <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-                </svg>
+                </svg>Hello
               </a>
-              <a class="ml-3 text-gray-500">
+              <a class="ml-3 text-white-500">
                 <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
                   <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
                 </svg>
