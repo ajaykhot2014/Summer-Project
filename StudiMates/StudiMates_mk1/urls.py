@@ -27,18 +27,12 @@ urlpatterns = [
     path('Qpapers',views.Qpapers,name='Qpapers'),
     path('extras',views.extras,name='extras'),
 
-
-    #ADded new here on 20 june if getting errors remove this
+#ADded new here on 20 june if getting errors remove this
     path('writtenNotes',views.writtenNotes,name='writtenNotes'),
     path('studilinks',views.studilinks,name='studilinks'),
     path('quetionPapers',views.quetionPapers,name='quetionPapers'),
     path('register',views.register,name='register'),
     path('login',views.login,name='login'),
     path('about',views.about,name='about')
-
-
-
-
-
 
 ]
